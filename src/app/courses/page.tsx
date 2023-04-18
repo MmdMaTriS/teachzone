@@ -15,6 +15,7 @@ async function getData() {
 
 export default async function Courses() {
   const data = await getData();
+
   return (
     <main>
       Courses Page

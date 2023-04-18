@@ -1,17 +1,18 @@
 import Header from "@/layouts/Header";
+import Provider from "@/providers/Provider";
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-
   return (
     <html lang="fa">
       <body>
-        {/* @ts-expect-error SSR-Component */}
-        <Header />
-        {children}
+        <Provider>
+          <Header />
+          {children}
+        </Provider>
       </body>
     </html>
   );
