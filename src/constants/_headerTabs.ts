@@ -31,7 +31,7 @@ const _headerTabs = [
     openMenu: false,
   }),
   createHeaderTabs({
-    id: "ShortVideo",
+    id: "LongVideo",
     name: "ویدئو کامل",
     hasLink: true,
     link: "/courses",
@@ -39,7 +39,7 @@ const _headerTabs = [
     openMenu: false,
   }),
   createHeaderTabs({
-    id: "ShortVideo",
+    id: "News",
     name: "اخبار",
     hasLink: true,
     link: "/news",

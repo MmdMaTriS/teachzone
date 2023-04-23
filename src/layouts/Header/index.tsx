@@ -6,6 +6,7 @@ import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { ABeeZee } from "next/font/google";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import React, { FormEvent, useState } from "react";
 
 const ABeeZeeFont = ABeeZee({
   weight: "400",
@@ -13,7 +14,14 @@ const ABeeZeeFont = ABeeZee({
 });
 export default function Header(): JSX.Element {
   const path = usePathname();
+  const [searchValue, setSearchValue] = useState("");
 
+  const handleClickSearch = (e: FormEvent<HTMLButtonElement>) => {
+    //# -> Change route to SearchPage
+  };
+  const handleChangeSearchValue = (e: FormEvent<HTMLInputElement>) => {
+    setSearchValue(e.currentTarget.value);
+  };
   return (
     <Container component="header" maxWidth="xl">
       <Stack
@@ -54,6 +62,9 @@ export default function Header(): JSX.Element {
             icon="searchIcon"
             size="small"
             placeholder="دنبال چی هستی؟"
+            onClickIcon={handleClickSearch}
+            onChange={handleChangeSearchValue}
+            value={searchValue}
           />
         </Stack>
         <Stack
@@ -73,7 +84,7 @@ export default function Header(): JSX.Element {
                     <Button
                       variant="text"
                       fullWidth
-                      sx={{ paddingX: 3, fontWeight: "700" }}
+                      sx={{ paddingX: 3, fontWeight: "700", fontSize: 15 }}
                       disabled={ctx["link"] === path}
                     >
                       {ctx["name"]}

@@ -20,6 +20,7 @@ type ComponentProps = {
   size?: "small" | "medium";
   label?: string;
   placeholder?: string;
+  onChange?: any;
 };
 export default function MuiTextFieldOutlined(
   props: ComponentProps
@@ -36,6 +37,8 @@ export default function MuiTextFieldOutlined(
       <OutlinedInput
         id={props.label}
         placeholder={props.placeholder}
+        value={props.value}
+        onChange={props.onChange}
         endAdornment={
           props.icon && (
             <InputAdornment position="end">
