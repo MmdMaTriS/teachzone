@@ -3,8 +3,9 @@ import Link from "next/link";
 import Typography from "@/components/Typography";
 
 export const metadata: Metadata = {
-  title: "Home Page - TeachZone",
-  description: "Learn Programming",
+  title: "آموزش برنامه نویس و نکات زبان های برنامه نویسی - TeachZone",
+  description:
+    "مجموعه ای کامل از آموزش و نکات برنامه نویسی و کدنویسی که بتونی سطح علمی و کدنویسی خودت رو ارتقا بدی, از مبتدی تا حرفه ای شدن توی برنامه نویسی رو تجربه کنید",
 };
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       <Typography component="h1" fontSize={30}>
         Hello
       </Typography>
-      <Link href="/courses">Click to Navigate </Link>
+      <Link href="/favorites">Click to Navigate </Link>
     </main>
   );
 }

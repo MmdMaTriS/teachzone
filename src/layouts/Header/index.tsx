@@ -1,22 +1,22 @@
 "use client";
 
 import MuiTextFieldOutlined from "@/components/MuiTextFieldOutlined";
-import { Box, Container, Stack, Typography } from "@mui/material";
-import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
+import _headerTabs from "@/constants/_headerTabs";
+import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { ABeeZee } from "next/font/google";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const ABeeZeeFont = ABeeZee({
   weight: "400",
   subsets: ["latin"],
 });
 export default function Header(): JSX.Element {
-  const router: AppRouterInstance = useRouter();
+  const path = usePathname();
 
   return (
     <Container component="header" maxWidth="xl">
       <Stack
-        component="header"
         direction="row-reverse"
         display={{ xs: "none", md: "flex" }}
         minHeight={85}
@@ -34,14 +34,14 @@ export default function Header(): JSX.Element {
         >
           <Typography
             component="strong"
-            fontSize={16}
+            fontSize={17}
             fontFamily={ABeeZeeFont.style.fontFamily}
             fontWeight="600"
           >
             <Typography
               component="span"
               fontWeight="900"
-              fontSize={20}
+              fontSize={21}
               color="error"
             >
               T
@@ -49,11 +49,40 @@ export default function Header(): JSX.Element {
             eachZone
           </Typography>
         </Box>
-        <Stack sx={{ width: 300, height: 50 }} justifyContent="center">
-          <MuiTextFieldOutlined icon="searchIcon" size="small" placeholder="دنبال چی هستی؟" />
+        <Stack sx={{ width: 330, height: 50 }} justifyContent="center">
+          <MuiTextFieldOutlined
+            icon="searchIcon"
+            size="small"
+            placeholder="دنبال چی هستی؟"
+          />
         </Stack>
-        <Stack flex={1} sx={{ backgroundColor: "pink" }} minHeight={40}>
-          Buttons
+        <Stack
+          flex={1}
+          alignItems="center"
+          minHeight={40}
+          flexDirection="row"
+          flexWrap="wrap"
+          rowGap={1}
+          columnGap={1}
+        >
+          {_headerTabs.map((ctx) => {
+            if (ctx["hasLink"]) {
+              return (
+                <Stack key={ctx["id"]}>
+                  <Link href={ctx["link"]}>
+                    <Button
+                      variant="text"
+                      fullWidth
+                      sx={{ paddingX: 3, fontWeight: "700" }}
+                      disabled={ctx["link"] === path}
+                    >
+                      {ctx["name"]}
+                    </Button>
+                  </Link>
+                </Stack>
+              );
+            }
+          })}
         </Stack>
       </Stack>
     </Container>
