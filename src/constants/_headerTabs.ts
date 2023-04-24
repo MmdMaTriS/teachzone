@@ -32,7 +32,7 @@ const _headerTabs = [
   }),
   createHeaderTabs({
     id: "LongVideo",
-    name: "ویدئو کامل",
+    name: "دوره آموزشی",
     hasLink: true,
     link: "/courses",
     openNewTab: false,

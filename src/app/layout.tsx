@@ -1,6 +1,6 @@
 import Header from "@/layouts/Header";
 import Provider from "@/providers/Provider";
-import Container from "@/components/Container";
+import Container from "@/components/ClientMUI/Container";
 export default function RootLayout({
   children,
 }: {
