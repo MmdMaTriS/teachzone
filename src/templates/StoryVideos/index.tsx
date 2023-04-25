@@ -3,6 +3,7 @@ import { StoryVideos } from "./types";
 //# Components
 import Stack from "@/components/ClientMUI/Stack";
 
+
 export default function StoryVideos(props: StoryVideos): JSX.Element {
   const { count, horizontal } = props;
   return (
@@ -20,7 +21,7 @@ export default function StoryVideos(props: StoryVideos): JSX.Element {
           return (
             <Stack
               key={idx}
-              minWidth={{ xs: 160, sm: 160, md: 180 }}
+              minWidth={{ xs: 160, sm: 160, md: 240 }}
               minHeight={{ xs: 160, sm: 160, md: 180 }}
               sx={{ borderRadius: 1, backgroundColor: "#c9c9c9" }}
             >

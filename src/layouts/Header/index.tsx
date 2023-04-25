@@ -106,7 +106,7 @@ export default function Header(): JSX.Element {
                     <Button
                       variant="text"
                       fullWidth
-                      sx={{ paddingX: 3, fontWeight: "700", fontSize: 15 }}
+                      sx={{ paddingX: 3, fontWeight: "500", fontSize: 15 }}
                       disabled={ctx["link"] === path}
                     >
                       {ctx["name"]}

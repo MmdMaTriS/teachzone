@@ -5,7 +5,7 @@ import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
 import { ThemeContextTypes, ThemeDir, ThemeMode } from "./types";
-import { Vazirmatn } from "next/font/google";
+import {  Vazirmatn } from "next/font/google";
 
 export const ThemeContext = createContext<ThemeContextTypes | null>({});
 
@@ -15,6 +15,7 @@ const VazirMatn = Vazirmatn({
   subsets: ["latin"],
   variable: "--font-vazir",
 });
+
 
 export default function Provider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<ThemeMode>("dark");
